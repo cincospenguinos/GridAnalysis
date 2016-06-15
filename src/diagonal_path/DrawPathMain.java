@@ -79,6 +79,19 @@ public class DrawPathMain extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO: this
-        repaint();
+        try {
+            String number1 = lengthAmount.getText();
+            String number2 = heightAmount.getText();
+
+            int width = Integer.parseInt(number1);
+            int height = Integer.parseInt(number2);
+
+            if(width > 0 && height > 0){
+                gridPanel.newGrid(width, height);
+                gridDimensionsLabel.setText(width + " by " + height);
+            }
+        } catch (Exception ex) {
+            return;
+        }
     }
 }

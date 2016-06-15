@@ -61,7 +61,21 @@ public class GridPanel extends JPanel {
             int x2 = (int)(gridWidth * ((int)point2.getObj1()) / grid.getGridLength());
             int y2 = (int)(gridHeight * ((int)point2.getObj2()) / grid.getGridHeight());
 
+            if(x1 == 0)
+                x1 += X_PADDING;
+            if(x2 == 0)
+                x2 += X_PADDING;
+            if(y1 == 0)
+                y1 += Y_PADDING;
+            if(y2 == 0)
+                y2 += Y_PADDING;
+
             g.drawLine(x1, y1, x2, y2);
         }
+    }
+
+    public void newGrid(int width, int height) {
+        grid = new Grid(width, height);
+        repaint();
     }
 }
