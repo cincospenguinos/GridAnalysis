@@ -15,6 +15,7 @@ public class Path {
         if(grid.length == 0 || grid[0].length == 0)
             throw new RuntimeException("Cannot generate a path in a grid with incorrect dimensions!");
 
+        path = new ArrayList<>();
         generatePath(startX, startY, grid);
     }
 
@@ -72,7 +73,8 @@ public class Path {
         }
     }
 
-    private ArrayList<Pair<Integer, Integer>> getPath(){
+
+    public ArrayList<Pair<Integer, Integer>> getPath(){
         return path;
     }
 }
